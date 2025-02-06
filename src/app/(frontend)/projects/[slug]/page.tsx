@@ -10,8 +10,6 @@ export default async function Page({ params }: Props) {
 	const page = await getPageTemplate()
 	const projects = await getProjects(await params)
 
-	console.log(projects);
-
 	if (!page)
 		throw Error('No `page` document with slug "projects/*" found in the Studio')
 
