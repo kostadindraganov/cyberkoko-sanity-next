@@ -71,6 +71,7 @@ export default function SearchForm({
 
 											<small className="technical text-accent/50 shrink-0 text-xs">
 												{result._type === 'blog.post' ? 'Blog' : 'Page'}
+												{result._type === 'projects.project' ? 'Projects' : 'Page'}
 											</small>
 										</a>
 									</li>

@@ -12,9 +12,14 @@ export default function ({
 	external?: string
 }) {
 	if (external) return external
-
 	if (internal) {
-		const segment = _type === 'blog.post' ? '/blog/' : '/'
+		let segment = '/';
+		if (_type === 'blog.post') {
+			segment = '/blog/';
+		} 
+		if (_type === 'projects.project') {
+			segment = '/projects/';
+		}
 		const path = internal === 'index' ? null : internal
 
 		return [segment, path, params].filter(Boolean).join('')

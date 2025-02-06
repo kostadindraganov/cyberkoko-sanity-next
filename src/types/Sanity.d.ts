@@ -62,6 +62,24 @@ declare global {
 			slug: { current: string }
 		}
 
+
+		interface ProjectsProject extends PageBase {
+			readonly _type: 'projects.project'
+			body: any
+			readTime: number
+			headings?: { style: string; text: string }[]
+			categories: ProjectsCategory[]
+			authors: Person[]
+			featured: boolean
+			hideTableOfContents: boolean
+			publishDate: string
+		}
+
+		interface ProjectsCategory extends SanityDocument {
+			title: string
+			slug: { current: string }
+		}
+
 		// miscellaneous
 
 		interface Logo extends SanityDocument {

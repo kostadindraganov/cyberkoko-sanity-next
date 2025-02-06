@@ -3,7 +3,7 @@ import { BASE_URL, vercelPreview } from './env'
 import type { Metadata } from 'next'
 
 export default async function processMetadata(
-	page: Sanity.Page | Sanity.BlogPost,
+	page: Sanity.Page | Sanity.BlogPost | Sanity.ProjectsProject,
 ): Promise<Metadata> {
 	const url = processUrl(page)
 	const { title, description, ogimage: uploadedOg, noIndex } = page.metadata
@@ -27,7 +27,10 @@ export default async function processMetadata(
 		alternates: {
 			canonical: url,
 			types: {
-				'application/rss+xml': '/blog/rss.xml',
+				'application/rss+xml': [
+					{ url: '/blog/rss.xml', title: 'RSS Feed' },
+					{ url: '/projects/rss.xml', title: 'RSS Feed' }
+				]
 			},
 		},
 	}
