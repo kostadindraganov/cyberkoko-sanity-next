@@ -2,6 +2,8 @@
 
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
+import { PiSpeakerHighLight } from "react-icons/pi";
+import { PiSpeakerSlash } from "react-icons/pi";
 
 const AudioToggle = () => {
   
@@ -31,13 +33,17 @@ const AudioToggle = () => {
 
 
 
-
   return (
    		<>
 	      <button
               onClick={toggleAudioIndicator}
-              className="ml-10 flex items-center space-x-0.5"
+              className="ml-10 flex items-center space-x-0.5 cursor-pointer"
             >
+              {isAudioPlaying 
+              ? <span><PiSpeakerHighLight className="text-white mr-2 mb-0.5"/></span>
+              : <span><PiSpeakerSlash className="text-white mr-2 mb-0.5"/></span>
+              }
+
               <audio
                 ref={audioElementRef}
                 className="hidden"
