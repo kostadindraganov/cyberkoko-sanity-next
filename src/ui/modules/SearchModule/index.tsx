@@ -14,7 +14,7 @@ export default function SearchModule({
 	scope: SearchScope
 }>) {
 	return (
-		<section className="section space-y-8">
+		<section className="section space-y-8 mt-14">
 			{(pretitle || intro) && (
 				<header className="richtext text-center">
 					<Pretitle>{pretitle}</Pretitle>

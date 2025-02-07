@@ -15,7 +15,7 @@ export default async function Page({ params }: Props) {
 
 	if (!projects) notFound()
 
-	return <Modules modules={page?.modules} page={page} projects={projects} />
+	return <Modules modules={page?.modules} page={page} projects={projects}/>
 }
 
 export async function generateMetadata({ params }: Props) {

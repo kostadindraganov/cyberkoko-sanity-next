@@ -19,7 +19,7 @@ export default function SearchForm({
 	const { results, setResults } = searchStore()
 
 	return (
-		<search className={cn(css.root, 'relative', className)} {...props}>
+		<search className={cn(css.root, 'relative py-3', className)} {...props}>
 			<label className="input focus-within:border-accent/50 relative z-[2] flex items-center gap-2 rounded">
 				<VscSearch />
 
@@ -70,8 +70,14 @@ export default function SearchForm({
 											</span>
 
 											<small className="technical text-accent/50 shrink-0 text-xs">
-												{result._type === 'blog.post' ? 'Blog' : 'Page'}
-												{result._type === 'projects.project' ? 'Projects' : 'Page'}
+											
+											{result._type === 'blog.post' 
+													? 'Blog' 
+													: result._type === 'projects.project'
+													? 'Projects'
+													: 'Page'
+												}
+												
 											</small>
 										</a>
 									</li>
